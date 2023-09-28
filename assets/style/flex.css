@@ -1,3 +1,5 @@
+/* Cabeçalho */
+
 .menu {
     /* Definir o flexbox */
     display: flex;
@@ -11,22 +13,112 @@
     column-gap: 33px;
 }
 
+/* Categorias */
+
+.categorias__lista {
+    /* Declarar como flexbox e por padrão ele fica como coluna*/
+    display: flex;
+    /* Alterar a disposição para coluna */
+    flex-direction: column;
+    /* Incluir espaçamento entre linhas row */
+    row-gap: .5rem;
+}
+
+/* Destaques */
+
+.destaques {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.destaques__barra {
+    /* Flex-grow é utilizado para expandir o elemento de acordo com o espaço disponível */
+    flex-grow: 1;
+}
+
+/* Eventos */
+
+.eventos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+    justify-content: center;
+}
+
+.eventos__item {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+/* Agenda */
+
+.agenda__lista {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+
+.agenda__item {
+    flex-grow: 1;
+}
+
+/* Rodapé */
+
+.rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.rodape__logo {
+    align-self: end;
+}
+
 /* Aplicando os estilos para a tela de tablet */
 @media (min-width: 720px) {
+    /* Cabeçalho */
+
     .menu {
         column-gap: 75px;
     }
+
+    /* Categorias */
+
+    .categorias__lista {
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+
+    /* Eventos */
+
+    .eventos__lista {
+        justify-content: end;
+    }
+
+    /* Agenda */
+
+    .agenda__lista {
+        justify-content: end;
+    }
+
 }
 
 /* Aplicando os estilos para a tela de desktop */
 @media (min-width: 1440px) {
+    /* Cabeçalho */
+
     .menu {
         column-gap: 105px;
         /* Impedir a quebra de linha */
         flex-wrap: nowrap;
     }
 
-    /* Ordenando individualmente cada item do flexbox */
+    /* Ordenando individualmente (pelo filho) cada item do flexbox */
     .menu__item:nth-child(1) {
         order: 1;
     }
@@ -46,5 +138,4 @@
     .menu__item:nth-child(5) {
         order: 2;
     }
-
 }
