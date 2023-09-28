@@ -1,0 +1,50 @@
+.menu {
+    /* Definir o flexbox */
+    display: flex;
+    /* Espaçamento no eixo principal */
+    justify-content: space-evenly;
+    /* Espaçamento no eixo secundário */
+    align-items: center;
+    /* Quebrar para a próxima linha quando não houver mais espaço */
+    flex-wrap: wrap;
+    /* Aplicar espaçamento apenas entre os items - Aplica apenas dos lados */
+    column-gap: 33px;
+}
+
+/* Aplicando os estilos para a tela de tablet */
+@media (min-width: 720px) {
+    .menu {
+        column-gap: 75px;
+    }
+}
+
+/* Aplicando os estilos para a tela de desktop */
+@media (min-width: 1440px) {
+    .menu {
+        column-gap: 105px;
+        /* Impedir a quebra de linha */
+        flex-wrap: nowrap;
+    }
+
+    /* Ordenando individualmente cada item do flexbox */
+    .menu__item:nth-child(1) {
+        order: 1;
+    }
+
+    .menu__item:nth-child(2) {
+        order: 3;
+    }
+
+    .menu__item:nth-child(3) {
+        order: 4;
+    }
+
+    .menu__item:nth-child(4) {
+        order: 5;
+    }
+
+    .menu__item:nth-child(5) {
+        order: 2;
+    }
+
+}
